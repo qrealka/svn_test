@@ -58,6 +58,15 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>pushd $(WindowsSdkDir)Debuggers\$(PlatformTarget)\srcsrv
+call svnindex.cmd /debug /source="(ProjectDir)" /symbols="$(TargetDir)"
+popd
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>svn index</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -75,6 +84,15 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>pushd $(WindowsSdkDir)Debuggers\$(PlatformTarget)\srcsrv
+call svnindex.cmd /debug /source="(ProjectDir)" /symbols="$(TargetDir)"
+popd
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>svn index</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
