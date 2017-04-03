@@ -59,8 +59,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>pushd $(WindowsSdkDir)Debuggers\$(PlatformTarget)\srcsrv
-call svnindex.cmd /debug /source="(ProjectDir)" /symbols="$(TargetDir)"
+      <Command>$(HOMEDRIVE)
+pushd $(WindowsSdkDir)Debuggers\$(PlatformTarget)\srcsrv
+call svnindex.cmd /debug /source="$(ProjectDir)" /symbols="$(TargetDir)"
 popd
 </Command>
     </PostBuildEvent>
@@ -85,8 +86,9 @@ popd
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <PostBuildEvent>
-      <Command>pushd $(WindowsSdkDir)Debuggers\$(PlatformTarget)\srcsrv
-call svnindex.cmd /debug /source="(ProjectDir)" /symbols="$(TargetDir)"
+      <Command>$(HOMEDRIVE)
+pushd $(WindowsSdkDir)Debuggers\$(PlatformTarget)\srcsrv
+call svnindex.cmd /debug /source="$(ProjectDir)" /symbols="$(TargetDir)"
 popd
 </Command>
     </PostBuildEvent>
